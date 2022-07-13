@@ -2,7 +2,8 @@
 let computerSelection = Math.floor(Math.random()*3) + 1;
 
 /* Asks to Get Rock Paper or Scissors for Player */
-var playerSelection = prompt("Please select rock, paper or scissors");
+var playerInput = prompt("Please select rock, paper or scissors");
+let playerSelection = playerInput.toLowerCase();
 
 /* Sets Rock Paper or Scissors for CPU based on number generated */
 if (computerSelection === 1){
