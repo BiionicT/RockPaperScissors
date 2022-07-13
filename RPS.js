@@ -1,24 +1,58 @@
 /* Generates Random Number to Get Rock Paper or Scissor for CPU */
-let computerSelect = Math.floor(Math.random()*3) + 1;
-console.log (computerSelect)
+let computerSelection = Math.floor(Math.random()*3) + 1;
 
 /* Asks to Get Rock Paper or Scissors for Player */
-var playerSelect = prompt("Please select rock, paper or scissors");
+var playerSelection = prompt("Please select rock, paper or scissors");
 
-function computerPlay (){
-if (computerSelect === 1){
-    computerSelect ="rock";  
+/* Sets Rock Paper or Scissors for CPU based on number generated */
+if (computerSelection === 1){
+    computerSelection = "rock";  
 }
-else if (computerSelect === 2){
-    computerSelect ="paper";
+else if (computerSelection === 2){
+    computerSelection = "paper";
 }
-else if (computerSelect === 3){
-    computerSelect ="scissors";
+else if (computerSelection === 3){
+    computerSelection = "scissors";
+}
+
+
+function game (computerSelection, playerSelection){
+
+/* Check for Tie */     
+    if (computerSelection === playerSelection){
+        return "It is a tie!";
+    }
+/* Check for Rock */       
+    if (computerSelection === "rock"){
+        if (playerSelection === "scissors"){
+            return "Computer wins!";
+    } else {
+        return "Player Wins";
+    }
+}
+/* Check for Paper */  
+if (computerSelection === "paper"){
+    if (playerSelection === "rock"){
+        return "Computer wins!";
+} else {
+    return "Player Wins";
+    }
+}
+/* Check for Scissor */  
+if (computerSelection === "scissors"){
+    if (playerSelection === "paper"){
+        return "Computer wins!";
+} else {
+    return "Player Wins";
+    }
 }
 }
 
 
-computerPlay();
 
-console.log(computerSelect)
-console.log(playerSelect)
+game();
+
+console.log("CPU " + computerSelection)
+console.log("Player " + playerSelection)
+
+console.log(game(computerSelection, playerSelection))
